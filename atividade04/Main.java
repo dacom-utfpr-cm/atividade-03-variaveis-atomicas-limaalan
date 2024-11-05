@@ -1,5 +1,10 @@
 package atividade04;
-
+/**
+ * @author Alan Lima Marques
+ * @date 05/11/2024
+ * @brief Inicia 4 threads que buscam números primos.
+ * 3 métodos de incremento do contador são testados, a função sincronizada, bloco sincronizado e variável atômica.
+ */
 public class Main {
     public static long testFindPrimeNumbers(int syncMethod){
         Long startTime = System.currentTimeMillis();
