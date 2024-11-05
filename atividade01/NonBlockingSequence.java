@@ -1,4 +1,4 @@
-
+package atividade01;
 import java.util.concurrent.atomic.AtomicLong;
 
 // Implemente um gerador de números sequenciais não
@@ -10,9 +10,10 @@ public class NonBlockingSequence {
     public int generateNumber (){
         do { 
             prev = sequence.get();
-            
-        } while (sequence.compareAndSet(prev, next));
+            next = prev+1;
+            //System.out.println("trying " + sequence +" " + prev + " " + next);
+        } while (!sequence.compareAndSet(prev, next));
 
-        return (sequence.intValue());
+        return (int) sequence.get();
     }
 }
